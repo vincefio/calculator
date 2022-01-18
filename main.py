@@ -27,7 +27,8 @@ def enterNum(buttonNum):
         enterNum(buttonNum)
 
 #make the Clear button work
-def clearEntry(placeHolder):
+def clearEntry():
+    print('clearEntry function hit')
     #currentEntry = displayBox.get()
     #print('clear Entry function hit with current entry being', currentEntry)
     displayBox.delete(0, 'end')
@@ -63,7 +64,8 @@ def addFunction(firstEntry):
     #print('allowNumberInEntry is', allowNumbersInEntry)
 
 #equals function
-def equalsFunction(placeholder):
+def equalsFunction():
+    print('equalsFunction hit')
     global secondNumber
     secondNumber = displayBox.get()
     #print('Second number when = is', secondNumber)
@@ -133,10 +135,10 @@ buttonMinus.grid(column=2, row=4)
 buttonDivide = ttk.Button(frm, width=10, text="/", command= lambda arg1='/': operations(arg1))
 buttonDivide.grid(column=0, row=5)
 
-buttonClear = ttk.Button(frm, width=10, text="C", command= lambda arg1='placeHolder': clearEntry(arg1))  #figure out the clear
+buttonClear = ttk.Button(frm, width=10, text="C", command= clearEntry)  #figure out the clear
 buttonClear.grid(column=1, row=5)
 
-buttonEqual = ttk.Button(frm, width=10, text="=", command= lambda arg1='=': equalsFunction(arg1))
+buttonEqual = ttk.Button(frm, width=10, text="=", command= equalsFunction)
 buttonEqual.grid(column=2, row=5)
 
 root.mainloop()
